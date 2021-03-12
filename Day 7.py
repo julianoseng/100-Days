@@ -23,3 +23,7 @@ for position in range(0, len(chosen_word)):
         display[position] = letter
         
         print(display)
+        
+        
+        
+# Test
