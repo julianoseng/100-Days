@@ -57,43 +57,17 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
-
-def caesar(text,shift):
-    if direction == 'encode':
-        cipher_text = ""
-        for letter in text:
-            #Finds the letter in the alphabet list
-            position = alphabet.index(letter)
-            
-            #If the shift is passed the length of the alphabet list, this will start over at the [0] position
-            position_amount = position + shift
-            
-            if position_amount > 25:
-                position_fix = position_amount - 26    
-                new_letter = alphabet[position_fix]
-                cipher_text += new_letter    
-            else:
-                new_position = position + shift
-                new_letter = alphabet[new_position]
-                cipher_text += new_letter
-        print(f"The encoded text is {cipher_text}")
-    elif direction == 'decode':
-        decoded_text = ""
-        for letter in text:
-            position = alphabet.index(letter)
-            position_amount = position - shift
-            
-            if position_amount < 0:
-                position_fix = position_amount + 26    
-                new_letter = alphabet[position_fix]
-                decoded_text += new_letter    
-            else:
-                new_position = position - shift
-                new_letter = alphabet[new_position]
-                decoded_text += new_letter
-        print(f"The decoded text is {decoded_text}")
+def caesar(start_text, shift_amount, cipher_direction):
+    end_text =""
+    if cipher_direction == "decode":
+        shift_amount *= -1
+    for letter in start_text:
+        position = alphabet.index(letter)
+        new_position = position + shift_amount
+        end_text = alphabet[new_position]
+    print(f"The {cipher_direction}d text is {end_text}")
 
 
-caesar(text, shift)
+caesar(start_text = text, shift_amount =shift, cipher_direction = direction)
 
  
