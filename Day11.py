@@ -140,5 +140,3 @@ def dealers_turn():
     
 
 start_game()
-
-# #hit or stay
