@@ -6,28 +6,32 @@ import os
 score = 0
 game_should_continue = True
 
+
 def screen_clear():
-   # for mac and linux(here, os.name is 'posix')
-   if os.name == 'posix':
-      _ = os.system('clear')
-   else:
-      # for windows platfrom
-      _ = os.system('cls')
+    # for mac and linux(here, os.name is 'posix')
+    if os.name == 'posix':
+        _ = os.system('clear')
+    else:
+        # for windows platfrom
+        _ = os.system('cls')
+
 
 def format_data(account):
-    """Formate the account data into printable format."""
+    """Format the account data into printable format."""
     account_name = account['name']
     account_descr = account['description']
     account_country = account['country']
     return f"{account_name}, a {account_descr}, from {account_country}"
 
+
 def check_answer(guess, a_followers, b_followers):
     """Take the user guess and follower counts and returns if they got it right."""
     if a_followers > b_followers:
         return guess == "a"
-        #Returns True or False
+        # Returns True or False
     else:
         return guess == "b"
+
     
 # Display Art
 print(logo)
@@ -35,7 +39,7 @@ print(logo)
 account_b = random.choice(data)
 
 # Make game repeatable
-while game_should_continue == True:
+while game_should_continue:
     # Generate a random account from the game data
     
     # Make account at position B become next acccount at position A
@@ -52,7 +56,7 @@ while game_should_continue == True:
     guess = input("Who has more followers? Type 'A' or 'B': ").lower()
 
     # Check if user is correct
-    ## Get follower count of each account
+    # Get follower count of each account
     a_follower_count = account_a["follower_count"]
     b_follower_count = account_b["follower_count"]
 
