@@ -23,11 +23,11 @@ class CarManager(Turtle):
         for color in range(0, len(COLORS)):
             new_car = CarManager()
             new_car.color(COLORS[color])
-            new_car.goto(random.randint(-430, 430), random.randint(20, 430))
+            new_car.goto(random.randint(220, 360), random.randint(20, 360))
 
     def move_around(self, game_is_on):
         if game_is_on:
             for car in all_cars:
                 car.forward(STARTING_MOVE_DISTANCE)
-                if car.xcor() < -445:
-                    car.goto(random.randint(-430, 430), random.randint(20, 430))
+                if car.xcor() < -300:
+                    car.goto(random.randint(220, 360), random.randint(20, 360))

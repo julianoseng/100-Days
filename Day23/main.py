@@ -25,7 +25,7 @@ game_is_on = True
 
 while game_is_on:
 
-    if player.ycor() >= 450:
+    if player.ycor() >= 380:
         scoreboard.next_level()
         player.next_level()
 
