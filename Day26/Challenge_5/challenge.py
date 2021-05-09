@@ -9,6 +9,10 @@ weather_c = {
 }
 
 
-def c_to_f(temp_c):
-    temp_f = (temp_c * 9/5) + 32
-    return temp_f
+# def c_to_f(temp_c):
+#     temp = (temp_c * 9/5) + 32
+#     return temp
+
+weather_f = {day: (temp_c*9/5) + 32 for (day, temp_c) in weather_c.items()}
+
+print(weather_f)
